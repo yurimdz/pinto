@@ -4,13 +4,15 @@ import javax.swing.JOptionPane;
 
 public class Main {
 
+    public static ArrayList<Contactos> Registro = new ArrayList<Contactos>();
     public static int Opcion;
-
     public static String temporal;
+    public static String nombreContacto;
+    public static String numeroRegistro;
 
     public static void main(String[] args) {
 
-        ArrayList<Contactos> Registro = new ArrayList<Contactos>();
+        
        
         JOptionPane.showMessageDialog(null,"Bienvenido a la agenda de contactos" );
         menu ();
@@ -54,9 +56,14 @@ public class Main {
 
     public static void agendar (){
 
-        JOptionPane.showInputDialog(null,"Ingrese el nombre del contacto: " );
-        JOptionPane.showInputDialog(null,"Ingrese el número del contacto: " );
+        nombreContacto = JOptionPane.showInputDialog(null,"Ingrese el nombre del contacto: ");
+        numeroRegistro = JOptionPane.showInputDialog(null,"Ingrese el número del contacto: ");
             
+    Contactos instancia = new Contactos();
+    instancia.setNombre(nombreContacto);
+    instancia.setNumeroContacto(numeroRegistro);
+
+    Registro.add(instancia);
 }
 
 }
